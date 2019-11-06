@@ -1,0 +1,17 @@
+body {
+  background:rgb(102,0,255);
+}
+
+h1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width:70%;
+  height:10%;
+  font-family: 'Press Start 2P', cursive;
+  color:white;
+  z-index:9999;
+}
