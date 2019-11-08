@@ -12,7 +12,7 @@ for (var i = 0; i < 10; i++) {
 		changingColor3 = changingColor3 + 15;
 		changingColor4 = changingColor4 + 20;
 		changingColor5 = changingColor5 + 30;
-  
+
   var Regular = `
       <div
 		 	class="rectangle"
@@ -21,13 +21,13 @@ for (var i = 0; i < 10; i++) {
   `;
     var Linked = `
 
-    <button type="button" class="linked" style="background-color:rgb(${changingColor},0,${changingColor2});
-onclick="window.location.href = 'assets/advice.html';">
-advice</button> 
+    <a class="linked" style="background-color:rgb(${changingColor},0,${changingColor2})";
+onclick="window.location.href = 'advice.html';">
+advice</a>
 
   `;
-  
-  
+
+
   if (i=== Math.floor(Math.random()*10)){
       myWrapper.insertAdjacentHTML('beforeend' , Linked);
       }else{
