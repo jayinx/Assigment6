@@ -8,20 +8,20 @@
 // new mojs.addShape( 'heart', Heart );
 
 document.addEventListener('DOMContentLoaded', function(event) {
+
  fetch('  https://api.adviceslip.com/advice')
 .then(function(results){
   return results.json()
 })
-
 .then(function(jsonResults){
 
 var randomQuote = jsonResults
-  
+
 // console.log("results: ", randomQuote.slip.advice)
 
-  
+
  document.querySelector("#root").insertAdjacentHTML('afterbegin', `
-<h1>${randomQuote.slip.advice}</h1> 
+<h1>${randomQuote.slip.advice}</h1>
 `)
 
    document.addEventListener( 'click',  (e) => {
@@ -29,7 +29,7 @@ var randomQuote = jsonResults
     redCirc
      .tune({ x:e.pageX, y: e.pageY })
     .replay();
-    sparks 
+    sparks
     .tune({ x:e.pageX, y: e.pageY })
     .replay();
   }else if (randomQuote.slip.slip_id.length === 2 ){
@@ -42,11 +42,11 @@ var randomQuote = jsonResults
      .replay();
   }
    })
-  
+
 })
 .catch(function(error){
   console.log("error message:", error)
-}) 
+})
 
 const DURATION = 500
 
@@ -80,7 +80,7 @@ const bubbles = new mojs.Burst({
 
 
 
-// ============ heart pop and stay 
+// ============ heart pop and stay
 
 const redCirc = new mojs.Shape({
      shape:'heart',
@@ -96,7 +96,7 @@ const redCirc = new mojs.Shape({
      scale:{to:2,easing: 'quad.out'},
      duration:  300
    });
-   
+
    const sparks = new mojs.Burst({
     left: 0, top: 0,
       radius:   { 10: 62 },
@@ -106,16 +106,16 @@ const redCirc = new mojs.Shape({
         radius:       2.5,
         fill:           [
 
-      
+
       { '#B76CFD' : '#E3D36B' },
       { '#CF8EEF' : '#CBEB98' },
-      
+
       { '#87E9C6' : '#1FCC93' },
       { '#A7ECD0' : '#9AE4CF' },
-      
+
       { '#87E9C6' : '#A635D9' },
       { '#D58EB3' : '#E0B6F5' },
-      
+
       { '#F48BA2' : '#CF8EEF' },
       { '#91D3F7' : '#A635D9' },
 
@@ -128,13 +128,13 @@ const redCirc = new mojs.Shape({
         duration:     [ 600, 900 ],
         easing:       'quint.out'
      }
-     
+
    });
 
 
 
 
-// ======= changing background 
+// ======= changing background
 const circle = new mojs.Shape({
   shape:        'circle',
   scale:        { 0 : 4, easing: 'cubic.out' },
